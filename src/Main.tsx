@@ -21,7 +21,7 @@ export class Main extends Component<MainProps, MainState>
     public render(): JSX.Element
     {
         return (
-            <Hello message="Thunder Webpack Lab">
+            <Hello message="Thunder Webpack Lab v2">
                 <div className="features">
                     <div>Webpack 5 + HMR</div>
                     <div>TypeScript + React</div>
