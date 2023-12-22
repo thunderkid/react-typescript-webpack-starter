@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import * as React from "react";
 import { App } from "./App";
 import { Hello } from "./components/Hello";
 
@@ -11,17 +11,17 @@ interface MainState
 {
 }
 
-export class Main extends Component<MainProps, MainState>
+export class Main extends React.Component<MainProps, MainState>
 {
     constructor(props: MainProps)
     {
         super(props);
     }
 
-    public render(): JSX.Element
+    public override render(): JSX.Element
     {
         return (
-            <Hello message="Thunder Webpack Lab v2">
+            <Hello message="Thunder Webpack Lab v3.8">
                 <div className="features">
                     <div>Webpack 5 + HMR</div>
                     <div>TypeScript + React</div>

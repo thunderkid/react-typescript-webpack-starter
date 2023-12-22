@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import * as React from "react";
 
 export interface HelloProps
 {
@@ -11,9 +11,9 @@ interface HelloState
 
 }
 
-export class Hello extends Component<HelloProps, HelloState>
+export class Hello extends React.Component<HelloProps, HelloState>
 {
-    public render(): JSX.Element
+    public override render(): JSX.Element
     {
         return (
             <div className="hello">
