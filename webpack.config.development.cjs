@@ -1,16 +1,18 @@
-const path = require("path");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { outputConfig, copyPluginPatterns, scssConfig, entryConfig, terserPluginConfig } = require("./env.config");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const { outputConfig, copyPluginPatterns, entryConfig, devServer } = require("./env.config.cjs");
 
 module.exports = (env, options) => 
 {
     return {
         mode: options.mode,
         entry: entryConfig,
+        devServer,
+        // Dev only
+        // Target must be set to web for hmr to work with .browserlist
+        // https://github.com/webpack/webpack-dev-server/issues/2758#issuecomment-710086019
+        target: "web",
         module: {
             rules: [
                 {
@@ -21,7 +23,9 @@ module.exports = (env, options) =>
                 {
                     test: /\.scss$/,
                     use: [
-                        MiniCssExtractPlugin.loader,
+                        // We're in dev and want HMR, SCSS is handled in JS
+                        // In production, we want our css as files
+                        "style-loader",
                         "css-loader",
                         {
                             loader: "postcss-loader",
@@ -67,23 +71,13 @@ module.exports = (env, options) =>
             path: path.resolve(__dirname, outputConfig.destPath),
             publicPath: "",
         },
-        optimization: {
-            minimizer: [
-                new TerserPlugin(terserPluginConfig)
-            ],
-            splitChunks: {
-                chunks: "all",
-            },
-        },
         plugins: [
-            new CleanWebpackPlugin(),
-            new CopyPlugin(copyPluginPatterns),
-            new MiniCssExtractPlugin({ filename: scssConfig.destFileName }),
             new HtmlWebpackPlugin({
                 template: "./src/index.html",
                 inject: true,
                 minify: false
             }),
+            new CopyPlugin(copyPluginPatterns),
         ]
     };
 };

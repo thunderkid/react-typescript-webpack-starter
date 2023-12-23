@@ -3,11 +3,13 @@
     "version": "3.0.0",
     "description": "A starter project for using React, TypeScript, SCSS and Webpack",
     "main": "index.js",
+    "type": "module",
     "scripts": {
-        "dev": "webpack serve --mode development --progress --hot --config ./webpack.config.development.js",
-        "build": "webpack --mode production --config ./webpack.config.production.js",
+        "dev": "webpack serve --mode development --progress --hot --config ./webpack.config.development.cjs",
+        "build": "webpack --mode production --config ./webpack.config.production.cjs",
         "test": "mocha src/tests/**/*.spec.ts",
-        "test2": "mocha --require ts-node/register tests/**/*.spec.ts"
+        "test2": "mocha --require ts-node/register src/tests/**/*.spec.ts",
+        "test3": "mocha --node-option loader=ts-node/esm --node-option experimental-specifier-resolution=node src/tests/**/*.spec.ts"
     },
     "keywords": [
         "react",
@@ -44,6 +46,7 @@
         "style-loader": "^3.3.3",
         "terser-webpack-plugin": "^5.3.9",
         "ts-loader": "^9.5.1",
+        "ts-node": "^10.9.2",
         "typescript": "^5.3.3",
         "webpack": "^5.89.0",
         "webpack-cli": "^5.1.4",
