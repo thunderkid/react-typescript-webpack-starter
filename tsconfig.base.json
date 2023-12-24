@@ -1,14 +1,14 @@
 {
     "compilerOptions": {
         "module": "esnext",
-        "target": "es2017",
-        "lib": [
-            "dom",
-            "dom.iterable",
-            "es5",
-            "es2015",
-            "es2016"
-        ],
+        "target": "es2021",
+        // "lib": [  // not sure if still needed with target es2021
+        //     "dom",
+        //     "dom.iterable",
+        //     "es5",
+        //     "es2015",
+        //     "es2016"
+        // ],
         "incremental": true,
         "sourceMap": true,
         "allowJs": true,
