@@ -1,19 +1,6 @@
-import * as React from "react";
+import React from "react";
+import ReactDOM from "react-dom";
 import { Main } from "./Main";
-import { createRoot } from "react-dom/client";
 
-export class App
-{
-    constructor()
-    {
-        this.render();
-    }
+ReactDOM.render(React.createElement(Main), document.getElementById("app"));
 
-    private render(): void
-    {
-        const root = createRoot(document.getElementById("app") || document.createElement("div"));
-        root.render(React.createElement(Main, { app: this }, null));
-    }
-}
-
-new App();
