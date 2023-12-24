@@ -21,7 +21,7 @@ export class Main extends React.Component<MainProps, MainState>
     public override render(): JSX.Element
     {
         return (
-            <Hello message="Thunder Webpack Lab v3.15">
+            <Hello message="Thunder Webpack Lab v3.16">
                 <div className="features">
                     <div>Webpack 5 + HMR</div>
                     <div>TypeScript + React</div>

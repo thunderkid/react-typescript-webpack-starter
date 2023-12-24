@@ -1,27 +1,46 @@
-import * as React from "react";
+import React, { FC } from "react";
 
 export interface HelloProps
 {
     message: string;
-    children: any;
+    children?: React.ReactNode | React.ReactNode[]    
 }
 
-interface HelloState
+export const Hello: FC<HelloProps> = (props) => 
 {
-
-}
-
-export class Hello extends React.Component<HelloProps, HelloState>
-{
-    public override render(): JSX.Element
-    {
-        return (
-            <div className="hello">
-                <h1>{this.props.message}</h1>
-                <div>
-                    {this.props.children}
-                </div>
+    return (
+        <div className="hello">
+            <h1>{props.message}</h1>
+            <div>
+                {props.children}
             </div>
-        );
-    }
+        </div>
+    );
 }
+
+
+// export interface HelloProps
+// {
+//     message: string;
+//     children: any;
+// }
+
+// interface HelloState
+// {
+
+// }
+
+// export class Hello extends React.Component<HelloProps, HelloState>
+// {
+//     public override render(): JSX.Element
+//     {
+//         return (
+//             <div className="hello">
+//                 <h1>{this.props.message}</h1>
+//                 <div>
+//                     {this.props.children}
+//                 </div>
+//             </div>
+//         );
+//     }
+// }
