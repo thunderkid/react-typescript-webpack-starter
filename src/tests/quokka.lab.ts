@@ -11,6 +11,5 @@ async function foo() {
 
 foo(); // Promise { 33 }  // 33
 
-//export {} // turns it into a module, allowing top-level awaits.
-//await foo(); // 33
-
+export {} // turns it into a module, allowing top-level awaits.
+await foo(); // 33
