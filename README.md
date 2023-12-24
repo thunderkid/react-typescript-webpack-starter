@@ -107,5 +107,9 @@ npm run build
 * [SCSS](https://sass-lang.com/) - Preprocessor for SCSS to CSS.
 
 
+### Hacks
+To get quokka working needed to explicitly add npm install @swc/core --save-dev
+
+
 ### 📝License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
