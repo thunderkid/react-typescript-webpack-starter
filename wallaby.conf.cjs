@@ -4,11 +4,11 @@ module.exports = function (wallaby) {
             'src/**/*.ts', // Adjust the path to include your source files
             'package.json', // Include package.json for module resolution
             // Exclude test files
-            { pattern: 'src/**/*.spec.ts', ignore: true }
+            { pattern: 'tests/**/*.spec.ts', ignore: true }
         ],
 
         tests: [
-            'src/**/*.spec.ts' // Adjust the pattern to your test files
+            'tests/**/*.spec.ts' // Adjust the pattern to your test files
         ],
 
         env: {
@@ -23,8 +23,8 @@ module.exports = function (wallaby) {
 
         compilers: {
             '**/*.ts?(x)': wallaby.compilers.typeScript({
-                module: 'ESNext', // Use ESNext for ESM support
-                target: 'ESNext'  // Target can be adjusted as necessary
+                //module: 'ESNext', // Use ESNext for ESM support
+                target: 'es2021'  // Target can be adjusted as necessary
             })
         },
 
