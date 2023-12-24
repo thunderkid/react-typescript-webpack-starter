@@ -4,11 +4,11 @@ module.exports = function (wallaby) {
             'src/**/*.ts', // Adjust the path to include your source files
             'package.json', // Include package.json for module resolution
             // Exclude test files
-            { pattern: 'tests/**/*.spec.ts', ignore: true }
+            { pattern: '**/*.spec.ts', ignore: true }
         ],
 
         tests: [
-            'tests/**/*.spec.ts' // Adjust the pattern to your test files
+            '**/*.spec.ts' // Adjust the pattern to your test files
         ],
 
         env: {
