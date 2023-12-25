@@ -7,7 +7,7 @@
     "scripts": {
         "dev": "webpack serve --mode development --progress --hot --config ./webpack.config.development.cjs",
         "build": "webpack --mode production --config ./webpack.config.production.cjs",
-        "test": "mocha --node-option loader=ts-node/esm --node-option experimental-specifier-resolution=node src/tests/**/*.spec.ts"
+        "test": "mocha --node-option loader=ts-node/esm --node-option experimental-specifier-resolution=node tests/**/*.spec.ts"
     },
     "keywords": [
         "react",

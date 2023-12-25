@@ -9,9 +9,9 @@
         "outDir": "out/built/",
         //"rootDir": "../..",
     },
-    // "include": [
-    //     //"ts", "../../common/ts",
-    // ],
+    "include": [
+        "src", "tests"  //"../../common/ts",
+    ],
     // "exclude": [
     //     //"../../node_modules"
     // ]
