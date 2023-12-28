@@ -2,14 +2,7 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
 import { outputConfig, copyPluginPatterns, entryConfig, devServer } from "./env.config.js";
-
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-
+import { __dirname } from './utils.js';
 
 export default (env, options) => {
     return {
