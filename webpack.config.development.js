@@ -1,10 +1,17 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
-const { outputConfig, copyPluginPatterns, entryConfig, devServer } = require("./env.config.cjs");
+import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
+import { outputConfig, copyPluginPatterns, entryConfig, devServer } from "./env.config.js";
 
-module.exports = (env, options) => 
-{
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+
+
+export default (env, options) => {
     return {
         mode: options.mode,
         entry: entryConfig,
