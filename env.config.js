@@ -1,5 +1,5 @@
 import path from "path";
-import { __dirname } from './utils.js';
+import { __dirname } from './path-utils.js';
 
 
 const outputConfig = {

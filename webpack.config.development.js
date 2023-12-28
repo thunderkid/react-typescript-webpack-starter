@@ -2,7 +2,7 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
 import { outputConfig, copyPluginPatterns, entryConfig, devServer } from "./env.config.js";
-import { __dirname } from './utils.js';
+import { __dirname } from './path-utils.js';
 
 export default (env, options) => {
     return {

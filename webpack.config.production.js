@@ -5,7 +5,7 @@ import CopyPlugin from 'copy-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { outputConfig, copyPluginPatterns, scssConfig, entryConfig, terserPluginConfig } from "./env.config.js";
-import { __dirname } from './utils.js';
+import { __dirname } from './path-utils.js';
 
 export default (env, options) => 
 {
